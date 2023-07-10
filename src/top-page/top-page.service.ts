@@ -21,6 +21,10 @@ export class TopPageService {
         return this.topPageModel.findOne({ alias }).exec();
     }
 
+    async findAll() {
+        return this.topPageModel.findOne({}).exec();
+    }
+
     async findByCategory(firstCategory: TopLevelCategory) {
         return this.topPageModel.find({ firstCategory }, { alias: 1, secondCategory: 1, title: 1 }).exec();
     }
